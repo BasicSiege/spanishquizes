@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Language Learning Game</h1>
+        <div class="question">
+            <p id="sentence">He rested yesterday.</p>
+            <p><em id="word">descansar</em></p>
+        </div>
+        <input type="text" id="answer" placeholder="Enter your answer here">
+        <div class="result" id="result"></div>
+        <div class="accent-buttons">
+            <button onclick="addAccent('á')">á</button>
+            <button onclick="addAccent('é')">é</button>
+            <button onclick="addAccent('í')">í</button>
+            <button onclick="addAccent('ó')">ó</button>
+            <button onclick="addAccent('ú')">ú</button>
+            <button onclick="addAccent('ñ')">ñ</button>
+        </div>
+        <div class="actions">
+            <button class="submit-btn" onclick="checkAnswer()">Submit</button>
+            <button class="skip-btn" onclick="skipQuestion()">Skip</button>
+            <button class="restart-btn" onclick="startOver()">Start Over</button>
+        </div>
+        <div class="score">
+            Score: <span id="score">0</span>
+        </div>
+        <div class="toggle">
+            <input type="checkbox" id="dark-mode-toggle" onchange="toggleDarkMode()">
+            <label for="dark-mode-toggle"></label>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function toggleDarkMode() {
+            var container = document.querySelector('.container');
+            var toggle = document.getElementById('dark-mode-toggle');
+            if (toggle.checked) {
+                container.classList.add('dark-mode');
+            } else {
+                container.classList.remove('dark-mode');
+            }
+        }
+    </script>
+</body>
+</html>

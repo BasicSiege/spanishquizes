@@ -87,6 +87,17 @@ function startOver() {
     loadQuestion();
 }
 
+function giveHint() {
+    const question = questions[currentQuestionIndex];
+    const correctAnswer = question.correctForm;
+    const hintLength = Math.floor(correctAnswer.length / 2); // Show half of the word as a hint
+    const hint = correctAnswer.slice(0, hintLength) + '_'.repeat(correctAnswer.length - hintLength);
+    
+    document.getElementById('result').innerText = `Hint: ${hint}`;
+    document.getElementById('result').classList.remove('correct', 'error');
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const darkModeToggle = document.getElementById('dark-mode-toggle');
 
